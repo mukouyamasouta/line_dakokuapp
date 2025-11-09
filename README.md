@@ -1,5 +1,7 @@
 # 出退勤打刻アプリ（PWA対応）
 
+> This repository contains the source code for the Attendance Punch-in and Punch-out App used in training.
+
 スマホからワンタップで出退勤を打刻し、Googleスプレッドシートに記録しつつ、管理者用LINEグループへ自動通知する勤怠管理アプリです。
 
 ## 📋 機能一覧
@@ -129,12 +131,14 @@ const APP_URL = 'https://script.google.com/macros/s/【ここにデプロイID�
 
 ```
 課題５/
-├── Code.gs              # GASバックエンド（すべてのロジックを含む）
+├── code.gs              # GASバックエンド（すべてのロジックを含む）
 ├── appsscript.json      # GAS設定ファイル
+├── 仕様書.md            # システム仕様書（詳細設計書）
+├── デプロイ手順.md      # デプロイ手順書
 └── README.md            # このファイル
 ```
 
-**重要**: `Code.gs` 内にHTML/CSS/JSもすべて含まれています！
+**重要**: `code.gs` 内にHTML/CSS/JSもすべて含まれています！
 - `getIndexHtml()` - フロントエンドHTML
 - `getStyleCss()` - スタイルシート
 - `getManifestJson()` - PWAマニフェスト
@@ -152,7 +156,7 @@ const APP_URL = 'https://script.google.com/macros/s/【ここにデプロイID�
 
 ### 研修生IDを変更する場合
 
-`Code.gs` の以下の部分を変更：
+`code.gs` の以下の部分を変更：
 
 ```javascript
 const USER_ID = 'user01';  // 任意のIDに変更
@@ -162,7 +166,7 @@ const USER_ID = 'user01';  // 任意のIDに変更
 
 ### デザインを変更する場合
 
-`Code.gs` 内の `getStyleCss()` 関数の中身を編集してください。
+`code.gs` 内の `getStyleCss()` 関数の中身を編集してください。
 
 ## ❗ トラブルシューティング
 
@@ -182,6 +186,11 @@ const USER_ID = 'user01';  // 任意のIDに変更
 ### デプロイURLにアクセスできない
 - デプロイ時に「アクセスできるユーザー: 全員」を選択したか確認
 - 承認画面で「許可」をクリックしたか確認
+
+## 📚 ドキュメント
+
+- [仕様書.md](仕様書.md) - システム全体の詳細仕様
+- [デプロイ手順.md](デプロイ手順.md) - デプロイの詳細手順
 
 ## 📄 ライセンス
 
